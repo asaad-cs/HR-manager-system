@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Password</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo">HR Management System</div>
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Home</a></li>
+            <li class="menu-item"><a href="manage_employees.html">Manage Employees</a></li>
+            <li class="menu-item"><a href="manage_leaves.html">Manage Leaves</a></li>
+            <li class="menu-item"><a href="#">Messages</a></li>
+            <li class="menu-item"><a href="view_attendance.html">View Attendance</a></li>
+            <li class="menu-item"><a href="update_profile.html">Update Profile</a></li>
+            <li class="menu-item"><a href="change_password.html">Change Password</a></li>
+            <li class="menu-item"><a href="about.html">About</a></li>
+            <li class="menu-item"><a href="Logout.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <!-- Change Password Section -->
+        <section class="password-container">
+            <h1 class="section-title">Change Password</h1>
+            <form id="changePasswordForm">
+                <div class="form-group">
+                    <label for="currentPassword">Current Password:</label>
+                    <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter your current password" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Enter your new password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm New Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your new password" required>
+                </div>
+                <button type="submit" class="submit-btn">Change Password</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Success Message Modal -->
+    <div id="successMessageModal" class="success-message-modal">
+        Password Updated Successfully!
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Listen for form submission
+        document.getElementById('changePasswordForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page from refreshing on form submission
+
+            // Show the success message modal
+            const successMessageModal = document.getElementById('successMessageModal');
+            successMessageModal.style.display = 'block';
+
+            // Hide the modal after 3 seconds
+            setTimeout(function() {
+                successMessageModal.style.display = 'none';
+            }, 3000); // Message disappears after 3 seconds
+        });
+    </script>
+</body>
+</html>
